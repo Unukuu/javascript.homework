@@ -40,10 +40,47 @@ const s = sumArr(numbers);
 console.log(s);
 //bodlogo 4 Ugugdsun temdegt muriin buh usgiig tom useg bolgoh function bich. input: 'the quick brown fox' output: 'The Quick Brown Fox '
 let text = "the quick brown fox";
-let text1 = text.split(" ");
-function upcase() {
-  for (i = 0; i < text1.length; i++) {
-    text1[i] = text1[i].toUpperCase;
+text = text.split(" ");
+let uppercap = [];
+function capital(upcase) {
+  for (i = 0; i < upcase.length; i++) {
+    let words = upcase[i];
+    const firstLetterUpper = words[0].toUpperCase();
+    const restWords = words.slice(1);
+    const newwords = firstLetterUpper + restWords;
+    uppercap.push(newwords);
+  }
+  return uppercap;
+}
+let m = capital(text);
+console.log(m);
+//bodlogo 5 Ugugdsun temdegt muriin array iig tus buriin temdegt muriig urvuugaar butsaah shine array butsaadag function bich. input: ['hello', 'world', 'javascript', 'array'] output: ['olleh', 'dlrow', 'tpircsavaj', 'yarra']
+
+text = ["hello", "world", "javascript", "array"];
+text1 = [];
+function textrev(arrtext) {
+  for (i = 0; i < arrtext.length; i++) {
+    let urvuu = arrtext[i];
+    let alpha = urvuu.split("");
+    let revword = alpha.reverse();
+    revword = revword.join("");
+    text1.push(revword);
+  }
+  return text1;
+}
+let mn = textrev(text);
+console.log(mn);
+//bodlogo 6 Ugugdsun text dotor tuhain oruulsan keyword(prompt ashiglah) ni bn uu gedgiin shalgah function bich. text = 'animal world' input: animal output: true, input: cat ouput: false
+let searchsec = prompt("haih text ee oruulna uu");
+text = "Hello world animal world fox cow horse";
+text = text.split(" ");
+function hailt(text1, ug) {
+  console.log("Index", text1.indexOf(ug));
+  if (text1.indexOf(ug) !== -1) {
+    return true;
+  } else {
+    return false;
   }
 }
-console.log(text1);
+let nm = hailt(text, searchsec);
+console.log(nm);
