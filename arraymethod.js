@@ -28,7 +28,8 @@ function sumArr(arr) {
   return sum;
 }
 
-const values = prompt("taslalaar tusgaarlan tonuudiig oruulna uu");
+const values = "12,12,12,12,1,1";
+// prompt("taslalaar tusgaarlan tonuudiig oruulna uu");
 
 const sArr = values.split(",");
 const numbers = [];
@@ -71,7 +72,7 @@ function textrev(arrtext) {
 let mn = textrev(text);
 console.log(mn);
 //bodlogo 6 Ugugdsun text dotor tuhain oruulsan keyword(prompt ashiglah) ni bn uu gedgiin shalgah function bich. text = 'animal world' input: animal output: true, input: cat ouput: false
-let searchsec = prompt("haih text ee oruulna uu");
+let searchsec = "haih text ee oruulna uu";
 text = "Hello world animal world fox cow horse";
 text = text.split(" ");
 function hailt(text1, ug) {
@@ -84,3 +85,123 @@ function hailt(text1, ug) {
 }
 let nm = hailt(text, searchsec);
 console.log(nm);
+// bodlogo 7 Дэлгүүрийн боруулалтын мэдэээл өгөгдсөн.
+
+// productName, unitPrice, amount, price, casherId(Ajiltanii dugaar), date гэсэн мэдээлэл агуулна.
+
+// Өгөгдлийг өөрсдөө зохионо.
+
+// const data = [
+
+//          {productName:"Bakery", unitPrice:5000, amount: 200, totalPrice: 500000  casherId:1, date: '2022-11-01'},
+
+//          {productName:"Chocolate", unitPrice:3000, amount: 18, totalPrice: 54.000 casherId:1, date: '2022-11-01'},
+
+//          {…}
+
+//          {…}
+
+//          {…}
+
+// ];Дараах даалгаварыг хийж гүйцэтгэнэ үү.
+
+// 1. Нийт борлуулалтын дүнг тооцоолох.
+
+// 2. Нийт борлуулагдсан барааны тоог тооцоолох.
+
+// 3. Хамгийн их зарагдсан 5 барааны жагсаалт /боруулалтын үнийн дүнгээр/ харуулах.
+
+// 4. Хамгийн бага зарагдсан 5 барааны жагсаалт /боруулалтын тоо хэмжээгэр/ харуулах.
+const data = [
+  {
+    productName: "Bakery",
+    unitPrice: 5000,
+    amount: 290,
+    totalPrice: 500000,
+    casherId: 1,
+    date: "2022-11-01",
+  },
+
+  {
+    productName: "Chocolate",
+    unitPrice: 3000,
+    amount: 18,
+    totalPrice: 54000,
+    casherId: 1,
+    date: "2022-11-01",
+  },
+  {
+    productName: "Milk",
+    unitPrice: 4500,
+    amount: 120,
+    totalPrice: 54000,
+    casherId: 2,
+    date: "2022-11-04",
+  },
+  {
+    productName: "potato",
+    unitPrice: 2000,
+    amount: 270,
+    totalPrice: 400000,
+    casherId: 2,
+    date: "2022-11-03",
+  },
+  {
+    productName: "tomato",
+    unitPrice: 6000,
+    amount: 50,
+    totalPrice: 300000,
+    casherId: 3,
+    date: "2022-11-02",
+  },
+  {
+    productName: "Beef",
+    unitPrice: 12000,
+    amount: 10,
+    totalPrice: 120000,
+    casherId: 3,
+    date: "2022-11-01",
+  },
+  {
+    productName: "Lamb",
+    unitPrice: 11000,
+    amount: 30,
+    totalPrice: 110000,
+    casherId: 2,
+    date: "2022-11-10",
+  },
+  {
+    productName: "Eden",
+    unitPrice: 35000,
+    amount: 20,
+    totalPrice: 700000,
+    casherId: 3,
+    date: "2022-11-21",
+  },
+];
+let amountofsales = 0,
+  pcs = 0;
+
+function sales(maindata) {
+  for (i = 0; i < maindata.length; i++) {
+    amountofsales += maindata[i].totalPrice;
+    pcs += maindata[i].amount;
+  }
+  return { amount: amountofsales, pcs: pcs };
+}
+let sl = sales(data);
+console.log(sl);
+
+//
+
+let topfivearr = data[0].amount;
+let topdown = [];
+let a = data[0].amount;
+function topfive(main) {
+  for (i = 0; i < main.length; i++) {
+    if (topfivearr < main[i].amount) topfivearr = main[i].amount;
+    topdown.push(topfivearr);
+  }
+}
+topfive(data);
+console.log(topdown);
