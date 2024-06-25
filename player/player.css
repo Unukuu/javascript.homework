@@ -1,0 +1,35 @@
+h1 {
+  text-align: center;
+}
+.container {
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.white {
+  width: 60%;
+  height: 200px;
+  background-color: white;
+  box-shadow: 20px 20px 20px 5px;
+  border-radius: 20px;
+}
+.picture {
+  width: 200px;
+  height: 200px;
+  background-image: url(../Twenty_One_Pilots_-_Clancy.png);
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  margin-top: -75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+}
+.whitedot {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+}
