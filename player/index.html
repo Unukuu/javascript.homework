@@ -12,14 +12,28 @@
   </head>
   <body>
     <h1>Music Player</h1>
+    <audio
+      controls
+      src="./Twenty One Pilots - Paladin Strait (Official Video) (320).mp3"
+    ></audio>
     <div class="container">
       <div class="white">
         <div class="picture">
           <div class="whitedot"></div>
         </div>
-        <button class="but">previous</button>
-        <button class="but">Play</button>
-        <button class="but">next</button>
+        <div class="buttonsec">
+          <button class="but" id="presong">
+            <i class="fa-solid fa-caret-left"></i
+            ><i class="fa-solid fa-caret-left"></i>
+          </button>
+          <button class="but" id="playsong">
+            <i class="fa-solid fa-play"></i>
+          </button>
+          <button class="but" id="nextsong">
+            <i class="fa-solid fa-caret-right"></i
+            ><i class="fa-solid fa-caret-right"></i>
+          </button>
+        </div>
       </div>
     </div>
     <script src="./player.js"></script>

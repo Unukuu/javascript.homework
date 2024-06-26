@@ -1,5 +1,9 @@
+body {
+  background-color: aquamarine;
+}
 h1 {
   text-align: center;
+  font-size: 100px;
 }
 .container {
   height: 400px;
@@ -8,6 +12,7 @@ h1 {
   justify-content: center;
 }
 .white {
+  position: relative;
   width: 60%;
   height: 200px;
   background-color: white;
@@ -15,6 +20,7 @@ h1 {
   border-radius: 20px;
 }
 .picture {
+  position: absolute;
   width: 200px;
   height: 200px;
   background-image: url(../Twenty_One_Pilots_-_Clancy.png);
@@ -32,4 +38,31 @@ h1 {
   height: 20px;
   background-color: white;
   border-radius: 50%;
+}
+.buttonsec {
+  transform: translate(0, -50%);
+  display: flex;
+  gap: 80px;
+  margin-left: 400px;
+  margin-top: 100px;
+}
+.but {
+  font-size: 80px;
+  background: none;
+  border: none;
+}
+.rotate {
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  transform-origin: 100px 100px;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
