@@ -37,3 +37,17 @@ change.addEventListener("click", () => {
     boxEl[i].classList.toggle("big");
   }
 });
+
+const changer = document.getElementById("toggle");
+const isPlaying = false;
+
+function togglePlay() {
+  isPlaying ? myAudio.pause() : myAudio.play();
+}
+
+myAudio.onplaying = function () {
+  isPlaying = true;
+};
+myAudio.onpause = function () {
+  isPlaying = false;
+};
