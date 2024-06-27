@@ -23,7 +23,7 @@ h1 {
   position: absolute;
   width: 200px;
   height: 200px;
-  background-image: url(../Twenty_One_Pilots_-_Clancy.png);
+  background-image: url("./Twenty_One_Pilots_-_Clancy.png");
   background-position: center;
   background-size: cover;
   border-radius: 50%;
@@ -65,4 +65,14 @@ h1 {
   to {
     transform: rotate(360deg);
   }
+}
+audio {
+  position: absolute;
+  left: 50%;
+  top: 300px;
+}
+h2 {
+  position: absolute;
+  z-index: 2;
+  transform: translate(0, -60px);
 }
