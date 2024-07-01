@@ -26,8 +26,9 @@
         Add task
       </button>
     </div>
-    <div class="container row gap-3" style="height: 600px">
+    <div class="container row gap-3">
       <div
+        id="bigBox"
         class="rounded col border border-secondary p-2 g-col-6 bg-black text-light"
       >
         <div class="d-flex justify-content-between align-items-center">
@@ -41,6 +42,7 @@
           <div class="fs-5 opacity-50">5</div>
         </div>
         <div
+          id="boxstyle"
           class="rounded bg-secondary d-flex justify-content-between align-items-center px-3 py-2"
         >
           <div class="form-check">
@@ -55,16 +57,17 @@
               Officiis, fugit!
             </label>
           </div>
-          <span>
+          <div>
             <button class="btn"><i class="fa-solid fa-pen"></i></button>
             <button class="btn">
               <i class="fa-solid fa-trash-can" style="color: #ec0909"></i>
             </button>
-          </span>
+          </div>
         </div>
       </div>
       <div
         class="col rounded border border-secondary p-2 g-col-6 bg-black text-light"
+        id="addTab"
       >
         <div class="d-flex justify-content-between align-items-center">
           <div class="d-flex align-items-center gap-3">
@@ -198,8 +201,12 @@
               <label class="input-group-text" for="inputGroupSelect01"
                 >Select status</label
               >
-              <select class="form-select" id="inputGroupSelect01">
-                <option selected>To do</option>
+              <select
+                class="form-select"
+                id="inputGroupSelect01"
+                onchange="fvalue()"
+              >
+                <option value="0">To do</option>
                 <option value="1">In process</option>
                 <option value="2">Done</option>
                 <option value="3">Blocked</option>
@@ -218,11 +225,14 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" id="Submit" class="btn btn-primary">
+              Submit
+            </button>
           </div>
         </div>
       </div>
     </div>
+    <script src="./todo.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
