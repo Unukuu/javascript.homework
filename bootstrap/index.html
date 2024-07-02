@@ -16,227 +16,159 @@
     />
   </head>
   <body class="bg-dark p-5">
-    <div class="d-flex justify-content-end">
-      <button
-        type="button"
-        class="btn btn-success mb-3"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-      >
-        Add task
-      </button>
-    </div>
-    <div class="container row gap-3">
-      <div
-        id="bigBox"
-        class="rounded col border border-secondary p-2 g-col-6 bg-black text-light"
-      >
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="d-flex align-items-center gap-3">
-            <div
-              style="height: 15px; width: 15px"
-              class="bg-light rounded-circle"
-            ></div>
-            <div class="fs-4">To Do</div>
+    <div class="container">
+      <div class="d-flex justify-content-end">
+        <button
+          type="button"
+          class="btn btn-success mb-3"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Add task
+        </button>
+      </div>
+      <div class="container row gap-3">
+        <div
+          id="bigBox"
+          class="rounded col border border-secondary p-2 g-col-6 bg-black text-light"
+        >
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+              <div
+                style="height: 15px; width: 15px"
+                class="bg-light rounded-circle"
+              ></div>
+              <div class="fs-4">To Do</div>
+            </div>
+            <div class="fs-5 opacity-50">5</div>
           </div>
-          <div class="fs-5 opacity-50">5</div>
+          <div id="todoCon">
+            <!-- bairlah heseg -->
+          </div>
         </div>
         <div
-          id="boxstyle"
-          class="rounded bg-secondary d-flex justify-content-between align-items-center px-3 py-2"
+          class="col rounded border border-secondary p-2 g-col-6 bg-black text-light"
+          id="addTab"
         >
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-            <label class="form-check-label" for="flexCheckDefault">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Officiis, fugit!
-            </label>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+              <div
+                style="height: 15px; width: 15px"
+                class="bg-warning rounded-circle"
+              ></div>
+              <div class="fs-4">In process</div>
+            </div>
+            <div class="fs-5 opacity-50">5</div>
           </div>
-          <div>
-            <button class="btn"><i class="fa-solid fa-pen"></i></button>
-            <button class="btn">
-              <i class="fa-solid fa-trash-can" style="color: #ec0909"></i>
-            </button>
+          <div id="inprocessCon">
+            <!-- bairlah heseg -->
+          </div>
+        </div>
+        <div
+          class="col rounded border border-secondary p-2 g-col-6 bg-black text-light"
+        >
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+              <div
+                style="height: 15px; width: 15px"
+                class="bg-success rounded-circle"
+              ></div>
+              <div class="fs-4">Done</div>
+            </div>
+            <div class="fs-5 opacity-50">5</div>
+          </div>
+          <div id="doneCon">
+            <!-- bairlah heseg -->
+          </div>
+        </div>
+        <div
+          class="col border border-secondary p-2 g-col-6 bg-black text-light rounded"
+        >
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3">
+              <div
+                style="height: 15px; width: 15px"
+                class="bg-danger rounded-circle"
+              ></div>
+              <div class="fs-4">Blocked</div>
+            </div>
+            <div class="fs-5 opacity-50">5</div>
+          </div>
+          <div id="blockedCon">
+            <!-- bairlah -->
           </div>
         </div>
       </div>
-      <div
-        class="col rounded border border-secondary p-2 g-col-6 bg-black text-light"
-        id="addTab"
-      >
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="d-flex align-items-center gap-3">
-            <div
-              style="height: 15px; width: 15px"
-              class="bg-warning rounded-circle"
-            ></div>
-            <div class="fs-4">In process</div>
-          </div>
-          <div class="fs-5 opacity-50">5</div>
-        </div>
-        <div
-          class="rounded bg-secondary d-flex justify-content-between align-items-center px-3 py-2"
-        >
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckChecked"
-            />
-            <label class="form-check-label" for="flexCheckChecked">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Officiis, fugit!
-            </label>
-          </div>
-          <span>
-            <button class="btn"><i class="fa-solid fa-pen"></i></button>
-            <button class="btn">
-              <i class="fa-solid fa-trash-can" style="color: #ec0909"></i>
-            </button>
-          </span>
-        </div>
-      </div>
-      <div
-        class="col rounded border border-secondary p-2 g-col-6 bg-black text-light"
-      >
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="d-flex align-items-center gap-3">
-            <div
-              style="height: 15px; width: 15px"
-              class="bg-success rounded-circle"
-            ></div>
-            <div class="fs-4">Done</div>
-          </div>
-          <div class="fs-5 opacity-50">5</div>
-        </div>
-        <div
-          class="rounded bg-secondary d-flex justify-content-between align-items-center px-3 py-2"
-        >
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault1"
-            />
-            <label class="form-check-label" for="flexCheckDefault1">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Officiis, fugit!
-            </label>
-          </div>
-          <span>
-            <button class="btn"><i class="fa-solid fa-pen"></i></button>
-            <button class="btn">
-              <i class="fa-solid fa-trash-can" style="color: #ec0909"></i>
-            </button>
-          </span>
-        </div>
-      </div>
-      <div
-        class="col border border-secondary p-2 g-col-6 bg-black text-light rounded"
-      >
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="d-flex align-items-center gap-3">
-            <div
-              style="height: 15px; width: 15px"
-              class="bg-danger rounded-circle"
-            ></div>
-            <div class="fs-4">Blocked</div>
-          </div>
-          <div class="fs-5 opacity-50">5</div>
-        </div>
-        <div
-          class="rounded bg-secondary d-flex justify-content-between align-items-center px-3 py-2"
-        >
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault2"
-            />
-            <label class="form-check-label" for="flexCheckDefault2">
-              Lorem ipsum dolor,
-            </label>
-          </div>
-          <span>
-            <button class="btn"><i class="fa-solid fa-pen"></i></button>
-            <button class="btn">
-              <i class="fa-solid fa-trash-can" style="color: #ec0909"></i>
-            </button>
-          </span>
-        </div>
-      </div>
-    </div>
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content bg-dark text-light">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">
-              Enter your task
-            </h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="input-group mb-3">
-              <label class="input-group-text" for="inputGroupSelect01"
-                >Select status</label
-              >
-              <select
-                class="form-select"
-                id="inputGroupSelect01"
-                onchange="fvalue()"
-              >
-                <option value="0">To do</option>
-                <option value="1">In process</option>
-                <option value="2">Done</option>
-                <option value="3">Blocked</option>
-              </select>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content bg-dark text-light">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Enter your task
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                aria-label="Close"
+                data-bs-dismiss="modal"
+              ></button>
             </div>
-            <div class="input-group mb-3">
-              <span class="input-group-text" id="inputGroup-sizing-default"
-                >To do</span
-              >
-              <input
-                type="text"
-                class="form-control"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-default"
-              />
+            <div class="modal-body">
+              <div class="input-group mb-3">
+                <label class="input-group-text" for="inputGroupSelect01"
+                  >Select status</label
+                >
+                <select
+                  class="form-select"
+                  id="inputGroupSelect01"
+                  onchange="stat()"
+                >
+                  <option value="Todo">To do</option>
+                  <option value="Inprocess">In process</option>
+                  <option value="Done">Done</option>
+                  <option value="Blocked">Blocked</option>
+                </select>
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="inputGroup-sizing-default"
+                  >To do</span
+                >
+                <input
+                  id="textInput"
+                  type="text"
+                  class="form-control"
+                  aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-default"
+                />
+              </div>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" id="Submit" class="btn btn-primary">
-              Submit
-            </button>
+            <div class="modal-footer">
+              <button
+                data-bs-dismiss="modal"
+                type="button"
+                id="Submit"
+                class="btn btn-primary"
+              >
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </div>
+      <script src="./todo.js"></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"
+      ></script>
     </div>
-    <script src="./todo.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
