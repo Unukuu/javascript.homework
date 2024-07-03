@@ -6,24 +6,35 @@ const doneCon = document.getElementById("doneCon");
 const blockedCon = document.getElementById("blockedCon");
 const statusValue = document.getElementById("inputGroupSelect01");
 const textInput = document.getElementById("textInput");
+let todotoo = document.getElementById("todotoo");
+let inprocesstoo = document.getElementById("inprocesstoo");
+let donetoo = document.getElementById("donetoo");
+let blockedtoo = document.getElementById("blockedtoo");
 //other
-let y = statusValue.value;
-console.log(y);
-function stat() {
-  y = statusValue.value;
-  console.log(y);
-}
+let todocounting = 0;
+let progresscounting = 0;
+let donecounting = 0;
+let blockedcounting = 0;
+let isEdited = false;
+let editedIndex = -1;
 
 let taskArr = [];
 
 function draw() {
+  todotoo.innerText = "0";
+  donetoo.innerText = "0";
+  inprocesstoo.innerText = "0";
+  blockedtoo.innerText = "0";
+  todocounting = 0;
+  progresscounting = 0;
+  donecounting = 0;
+  blockedcounting = 0;
   todoCon.innerHTML = "";
   inprocessCon.innerHTML = "";
   doneCon.innerHTML = "";
   blockedCon.innerHTML = "";
 
   for (let i = 0; i < taskArr.length; i++) {
-    console.log("TASKS", taskArr);
     const newTaskCard = `
      <div
           class="rounded bg-secondary d-flex justify-content-between align-items-center px-3 py-2"
@@ -54,18 +65,26 @@ function draw() {
     switch (taskArr[i].status) {
       case "Todo": {
         todoCon.innerHTML += newTaskCard;
+        todocounting += 1;
+        todotoo.innerText = todocounting;
         break;
       }
       case "Inprocess": {
         inprocessCon.innerHTML += newTaskCard;
+        progresscounting += 1;
+        inprocesstoo.innerText = progresscounting;
         break;
       }
       case "Done": {
         doneCon.innerHTML += newTaskCard;
+        donecounting += 1;
+        donetoo.innerText = donecounting;
         break;
       }
       case "Blocked": {
         blockedCon.innerHTML += newTaskCard;
+        blockedcounting += 1;
+        blockedtoo.innerText = blockedcounting;
         break;
       }
       default: {
@@ -73,20 +92,6 @@ function draw() {
       }
     }
   }
-}
-Submit.addEventListener("click", () => {
-  const newTask = {
-    name: txt(),
-    status: y,
-  };
-  taskArr.push(newTask);
-  draw();
-  txt();
-});
-
-function txt() {
-  let gettext = textInput.value;
-  return gettext;
 }
 
 function deleteArr(taskindex) {
@@ -99,6 +104,30 @@ function editorBtn(taskindex) {
   statusValue.value = taskArr[taskindex].status;
   textInput.value = taskArr[taskindex].name;
   console.log(taskindex);
-  taskArr.splice(taskindex, 1);
+  isEdited = true;
+  console.log(isEdited);
+  editedIndex = taskindex;
+}
+
+Submit.addEventListener("click", function () {
+  if (isEdited) {
+    taskArr[editedIndex].name = textInput.value;
+    taskArr[editedIndex].status = statusValue.value;
+    isEdited = false;
+    console.log(isEdited);
+  } else {
+    const newTask = {
+      name: textInput.value,
+      status: statusValue.value,
+    };
+    taskArr.push(newTask);
+  }
   draw();
+});
+
+function defaultVal() {
+  isEdited = false;
+  console.log(isEdited);
+  textInput.value = "";
+  statusValue.value = "Todo";
 }

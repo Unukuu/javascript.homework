@@ -19,6 +19,7 @@
     <div class="container">
       <div class="d-flex justify-content-end">
         <button
+          onclick="defaultVal()"
           type="button"
           class="btn btn-success mb-3"
           data-bs-toggle="modal"
@@ -27,7 +28,7 @@
           Add task
         </button>
       </div>
-      <div class="container row gap-3">
+      <div class="row gap-3">
         <div
           id="bigBox"
           class="rounded col border border-secondary p-2 g-col-6 bg-black text-light"
@@ -40,7 +41,10 @@
               ></div>
               <div class="fs-4">To Do</div>
             </div>
-            <div class="fs-5 opacity-50">5</div>
+            <div class="fs-5 opacity-50" id="todotoo">
+              0
+              <!-- too oruulah -->
+            </div>
           </div>
           <div id="todoCon">
             <!-- bairlah heseg -->
@@ -58,7 +62,9 @@
               ></div>
               <div class="fs-4">In process</div>
             </div>
-            <div class="fs-5 opacity-50">5</div>
+            <div class="fs-5 opacity-50" id="inprocesstoo">
+              <!-- too oruulah -->0
+            </div>
           </div>
           <div id="inprocessCon">
             <!-- bairlah heseg -->
@@ -75,7 +81,10 @@
               ></div>
               <div class="fs-4">Done</div>
             </div>
-            <div class="fs-5 opacity-50">5</div>
+            <div class="fs-5 opacity-50" id="donetoo">
+              0
+              <!-- too oruulah -->
+            </div>
           </div>
           <div id="doneCon">
             <!-- bairlah heseg -->
@@ -92,7 +101,10 @@
               ></div>
               <div class="fs-4">Blocked</div>
             </div>
-            <div class="fs-5 opacity-50">5</div>
+            <div class="fs-5 opacity-50" id="blockedtoo">
+              0
+              <!-- too oruulah -->
+            </div>
           </div>
           <div id="blockedCon">
             <!-- bairlah -->
@@ -126,11 +138,7 @@
                 <label class="input-group-text" for="inputGroupSelect01"
                   >Select status</label
                 >
-                <select
-                  class="form-select"
-                  id="inputGroupSelect01"
-                  onchange="stat()"
-                >
+                <select class="form-select" id="inputGroupSelect01">
                   <option value="Todo">To do</option>
                   <option value="Inprocess">In process</option>
                   <option value="Done">Done</option>
